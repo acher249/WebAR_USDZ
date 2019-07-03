@@ -28,7 +28,14 @@ $( document ).ready(function() {
     }
     else if(!browserString.includes("Chrome") && !browserString.includes("Safari")){
 
-        alert(" YOU NEED TO BE ON EITHER SAFARI ON iOS or CHROME ON ANDROID ");
+        alert(" YOU NEED TO BE ON EITHER SAFARI ON iOS or CHROME ON ANDROID... THIS BROWSER WON'T WORK FOR WEB AR ");
+
+        console.log("Adam - you are not in Safari or Chrome.. this won't work ")
+        $('#ios_quickLook').removeClass('hide');
+        $('#ios_quickLook').addClass('hide');
+    
+        $('#android_quickLook').removeClass('hide');
+        $('#android_quickLook').addClass('hide');
     }
 
 });
