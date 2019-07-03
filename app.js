@@ -1,22 +1,35 @@
 $( document ).ready(function() {
-    console.log( "ready!" );
+    // console.log( "ready!" );
 
     //  check which browser the user is on.. Then curate the page.
     var browserString = navigator.sayswho;
-    console.log(browserString);
+    // console.log(browserString);
 
     // if iOS
-    if(browserString){
+    if(browserString.includes("Safari")){
 
+        console.log("Adam - you are in the Safari browser.. so you should be on an iOS phone ")
         $('#ios_quickLook').removeClass('hide');
         $('#ios_quickLook').addClass('show');
     
         $('#android_quickLook').removeClass('show');
         $('#android_quickLook').addClass('hide');
-    }
-    // else if(){
 
-    // }
+    }
+    else if(browserString.includes("Chrome")){
+
+        console.log("Adam - you are in the Chrome browser.. so you should be on an android phone ")
+        $('#ios_quickLook').removeClass('show');
+        $('#ios_quickLook').addClass('hide');
+    
+        $('#android_quickLook').removeClass('hide');
+        $('#android_quickLook').addClass('show');
+
+    }
+    else if(!browserString.includes("Chrome") && !browserString.includes("Safari")){
+
+        alert(" YOU NEED TO BE ON EITHER SAFARI ON iOS or CHROME ON ANDROID ");
+    }
 
 });
 
