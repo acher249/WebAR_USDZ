@@ -37,11 +37,74 @@
   <div id="ios_quickLook">
       <p>You are in Safari so you must be on an iOS device.</p>
     <!-- Hosted Model on Firebase with Direct Download Link -- OR -- store models in the repo -->
-    <!-- <a href="models/SandCastle.usdz" rel="ar"></a> -->
-    <a href="https://firebasestorage.googleapis.com/v0/b/webarstorage.appspot.com/o/reflectionTest.usdz?alt=media&token=fd04f01c-5ef5-44ce-8c06-fcfc5bf271f6.usdz" rel="ar">
+    <a href="models/SandCastle.usdz" rel="ar"></a>
+    <!-- <a href="https://firebasestorage.googleapis.com/v0/b/webarstorage.appspot.com/o/reflectionTest.usdz?alt=media&token=fd04f01c-5ef5-44ce-8c06-fcfc5bf271f6.usdz" rel="ar"> -->
 
       <!-- Image from any  -->
-      <img src="https://static.turbosquid.com/Preview/2016/06/17__12_28_28/Ren_01.jpg2a86c683-9581-4c70-9e1f-27e113044182Original.jpg" width="250" height="250">
+      <img src="<html>
+
+        <head>
+          <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+          <title>AR Quick Look</title>
+            <script>
+                  /* from Apple's AR Quick Look Gallery */
+                  (function () {
+                    var isRelAR = false;
+                    var a = document.createElement('a');
+                    if (a.relList.supports('ar')) {
+                      isRelAR = true;
+                    }
+                    document.documentElement.classList.add(isRelAR ? 'relar' : 'no-relar');
+                  })();
+            </script>
+            <style>
+              .relar [data-hide-on-relar] {
+                display: none;
+              }
+            </style>
+            <!-- Add CSS -->
+            <link rel="stylesheet" href="style.css">
+            <script
+              src="https://code.jquery.com/jquery-3.4.1.min.js"
+              integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+              crossorigin="anonymous"></script>
+        </head>
+        
+        <body>
+          <h1>Web AR YAY! :) </h1>
+          <p data-hide-on-relar>Visit this page on Safari with iOS or Chrome with Android to try AR Quick Look</p>
+        
+          <!-- ******************* -->
+          <!-- Need to create these divs dynamically s othat they don't pop up for a split second.. -->
+          <!-- ******************* -->
+          <div id="ios_quickLook">
+              <p>You are in Safari so you must be on an iOS device.</p>
+            <!-- Hosted Model on Firebase with Direct Download Link -- OR -- store models in the repo -->
+            <a href="models/AJC_Face.usdz" rel="ar"></a>
+            <!-- <a href="https://firebasestorage.googleapis.com/v0/b/shop-office.appspot.com/o/SandCastle.usdz?alt=media&token=bf94ba90-1809-4a83-a516-875d8d26e871.usdz" rel="ar"> -->
+        
+              <!-- Image from any  -->
+              <img src="http://static1.squarespace.com/static/584f06a0414fb5464299942a/58f77380bb7f1ec5127a684d/5b984d2f1ae6cf5168ab48db/1540235063761/Adam+Chernick+%282%29.jpg" width="250" height="250">
+        
+            </a>
+        
+          </div>
+        
+          <div id="android_quickLook">
+              <p>You in Chrome so you must be on an Android device.</p>
+            <!-- This is all you need for Android -->
+            <model-viewer ar src="models/SandCastle.gltf" auto-rotate camera-controls alt="Sand Castle!" background-color="#455A64"></model-viewer>
+        
+          </div>
+        
+          <!-- Libraries to make the Android quicklook function -->
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+        <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+        <script src="app.js"></script>
+        
+        </body>
+        
+        </html>" width="250" height="250">
 
     </a>
 
